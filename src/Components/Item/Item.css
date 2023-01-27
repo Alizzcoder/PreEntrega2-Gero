@@ -1,0 +1,36 @@
+.item {
+    text-align: center;
+    margin: 10px 15px;;
+    color: #000000;
+    border: 1px #686768 solid;
+    padding: 15px;
+    border-radius: 2px;
+    width: 20%;
+}
+.item img {
+    width: 270px;
+    height: 270px;
+    border-radius: 1%;
+    
+}
+
+.itemLink{
+    background-color: #0a8b8d;
+    color: #010101;
+    border: 1px #010101 solid;
+    
+}
+
+.itemLink:hover{
+    color: #000000;
+}
+
+a.itemLink{
+    border-radius: 10px;
+    padding: 6px 6px;
+    font-size: 1.5rem;
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    text-decoration: none;  
+}

@@ -1,0 +1,49 @@
+.home {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 630px;
+    background-image: url(/public/assets/GresPlatosTazas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: bolder;
+    text-align: center;
+    overflow: hidden;
+}  
+
+a{
+    font-size: 20px;
+    margin: 25px auto;
+    text-decoration: none;
+}
+a:hover {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+h1 {
+    color: black;
+    padding-top: 80px;
+}
+
+.home .bienvenido a {
+    background: #d7dddf;
+    border: 1px solid #0a030d;
+    border-radius: 20px;
+    color: #023047;
+    display: block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    width: 35%;
+}
+
+/**** Responsive *****/
+@media (min-width: 768px) {
+    .home {
+        flex-direction: row;
+        min-height: 70%;
+    }    
+    
+    
+}

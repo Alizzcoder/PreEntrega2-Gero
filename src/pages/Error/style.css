@@ -1,0 +1,8 @@
+.pag-error{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: xx-large;
+    margin-top: 200px
+};

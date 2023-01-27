@@ -1,0 +1,124 @@
+[
+    {
+        "id": 1,
+        "name": "Colador",
+        "description": "Colador blanco",
+        "price": 500,
+        "image": "/assets/Colador.jpg",
+        "category": "Colecciones",
+        "stock": 1
+    },
+ 
+    {
+        "id": 2,
+        "name": "Florero Dona",
+        "description": "Florero Dona",
+        "price": 900,
+        "image": "/assets/FloreroDona.jpg",
+        "category": "Colecciones",
+        "stock": 3
+    },
+
+    {
+        "id": 3,
+        "name": "Jarritos",
+        "description": "Jarritos pequeños",
+        "price": 200,
+        "image": "/assets/Jarritos.jpg",
+        "category": "Jarrones",
+        "stock": 5
+    },
+
+    {
+        "id": 4,
+        "name": "Jarrón minimalista",
+        "description": "Jarron minimalista",
+        "price": 1200,
+        "image": "/assets/jarrones-minimalistas.jpg",
+        "category": "Jarrones",
+        "stock": 5
+    },
+
+    {
+        "id": 5,
+        "name": "Jarrón redondo",
+        "description": "Jarrón redondo",
+        "price": 1200,
+        "image": "/assets/JarronRedondo.jpg",
+        "category": "Jarrones",
+        "stock": 5
+    },
+
+    {
+        "id": 6,
+        "name": "Jarrón clásico",
+        "description": "Jarrón clásico",
+        "price": 1600,
+        "image": "/assets/Jarronytazas.jpg",
+        "category": "Jarrones",
+        "stock": 5
+    },
+
+    
+    {
+        "id": 7,
+        "name": "Platos rústicos",
+        "description": "Platos rústicos",
+        "price": 800,
+        "image": "/assets/Platos.jpg",
+        "category": "Platos",
+        "stock": 10
+    },
+
+    {
+        "id": 8,
+        "name": "Platos varios",
+        "description": "Platos varios",
+        "price": 800,
+        "image": "/assets/Platos-varios.jpg",
+        "category": "Platos",
+        "stock": 20
+    },
+    
+    {
+        "id": 9,
+        "name": "Tazas trapecio",
+        "description": "Tazas trapecio",
+        "price": 1000,
+        "image": "/assets/TazaDesayuno.jpg",
+        "category": "Tazas",
+        "stock": 15
+    },
+
+    {
+        "id": 10,
+        "name": "Tazón para sopa",
+        "description": "Tazón para sopa",
+        "price": 1000,
+        "image": "/assets/TazonSopa.jpg",
+        "category": "Tazas",
+        "stock": 15
+    },
+
+    {
+        "id": 11,
+        "name": "Tazas Gres",
+        "description": "Tazas de gres blanco y gris",
+        "price": 1200,
+        "image": "/assets/TazaGres.jpg",
+        "category": "Tazas",
+        "stock": 10
+    },
+
+    {
+        "id": 12,
+        "name": "Tazas Gres Negra",
+        "description": "Tazas de gres negra",
+        "price": 1200,
+        "image": "/assets/TazaGris.jpg",
+        "category": "Tazas",
+        "stock": 10
+    }
+    
+
+]
