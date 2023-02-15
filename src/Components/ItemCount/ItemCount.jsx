@@ -1,23 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './estilo.css';
 
 
 
-const ItemCount = ({stock}) => {
-  const [contador, setContador] = useState (1)
+const ItemCount = ({contador, actualizarValor, stock}) => {
+  //const [contador, setContador] = useState (1)
   
-  const sumar= () => {
-    if (contador === {stock}){
+  
+  const onAdd= () => {
+    if (stock === contador){
+      alert ("Llegaste al número máximo de unidades disponbiles")
         return;
             }
-        setContador (contador+1);
+        actualizarValor (contador+1);
     };
 
    const restar= () => {
-     if (contador ===0){
+     if (contador <=0){
         return;
         }
-        setContador (contador-1)
+        actualizarValor (contador-1)
     };
   
    return (
@@ -27,9 +29,9 @@ const ItemCount = ({stock}) => {
                 <div> 
                     <span>{contador}</span>
                 </div>
-             <button className= "mat"onClick={sumar}> + </button>
+             <button className= "mat"onClick={onAdd}> + </button>
         </div>
-        <button className= "compra"> Agregar al carrito </button>
+       
     </div>
   )
 };

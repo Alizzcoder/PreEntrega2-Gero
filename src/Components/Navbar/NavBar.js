@@ -1,6 +1,8 @@
 import './styles.css';
 import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget';
+
 
 
 const NavBar = () => {
@@ -25,7 +27,7 @@ const NavBar = () => {
             <NavLink to={"/category/Platos"} style={({ isActive }) =>isActive ? active : disactive}>Platos</NavLink>
             <NavLink to={"/category/Jarrones"} style={({ isActive }) =>isActive ? active : disactive}>Jarrones</NavLink>
         </ul>
-         <CartWidget/>
+            <Link to="/cart"><CartWidget/></Link>
           
       </div>
   )

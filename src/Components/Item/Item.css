@@ -1,11 +1,11 @@
 .item {
     text-align: center;
-    margin: 10px 15px;;
+    margin: 10px 5px;;
     color: #000000;
     border: 1px #686768 solid;
     padding: 15px;
-    border-radius: 2px;
-    width: 20%;
+    border-radius: 4px;
+    width: 100%;
 }
 .item img {
     width: 270px;

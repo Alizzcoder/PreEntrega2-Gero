@@ -1,18 +1,42 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { requestProductosById } from "../../ExportData/requestData";
+//import { requestProductosById } from "../../ExportData/requestData";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import PagCargando from "../PagCargando/PagCargando";
+//import PagCargando from "../PagCargando/PagCargando";
+import {getFirestore, doc, getDoc} from "firebase/firestore";
 
 
-function ItemDetailContainer() {
+const ItemDetailContainer= () => {
+    const [singleProduct, setSingleProduct] = useState ({});
+    const {id}= useParams ();
 
-    const [productos, setProductos] = useState(null);
+    const getProduct = () => {
+        const db = getFirestore ();
+        const querySnapshot = doc (db, "items", id);
+
+        getDoc(querySnapshot)
+        .then ((response)=>{
+            console.log (response.id);
+            console.log (response.data());
+            setSingleProduct ({id:response.id, ...response.data()});
+            
+        })
+        . catch((error) => {console.log (error)})
+    }
+
+
+   /* const [productos, setProductos] = useState(null);
     const [error, setError] = useState(null);
-    const { itemId } = useParams();
+    const { itemId } = useParams();*/
+
 
     useEffect( () => {
-        requestProductosById(Number(itemId))
+     getProduct()
+    }, []);
+     return (
+     <div> <ItemDetail product={singleProduct} /></div>)
+
+       /* requestProductosById(Number(itemId))
             .then( (respuesta) => { setProductos(respuesta);
                setError(null);
             })
@@ -26,7 +50,7 @@ function ItemDetailContainer() {
               error ? "Error" : productos ? <ItemDetail {...productos} /> : <PagCargando />
             }
         </div>
-    )
+    )*/
 }
 
 export default ItemDetailContainer;

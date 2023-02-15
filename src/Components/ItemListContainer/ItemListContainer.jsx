@@ -2,44 +2,58 @@ import { useEffect, useState } from "react";
 import PagCargando from "../PagCargando/PagCargando";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
-import { requestAllProductos } from "../../ExportData/requestData";
+//import { requestAllProductos } from "../../ExportData/requestData";
+import { getFirestore, getDocs, collection, query, where } from "firebase/firestore";
 
 
-function ItemListContainer() {
+const ItemListContainer =()=> {
 
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
-    const { itemName, categoryId } = useParams();
+    const { category} = useParams();
 
-    useEffect( () => {
-        setProductos([]);
-        setLoading(true);
-        requestAllProductos()
-            .then( (respuesta) => {
-                if (itemName) {
-                    let name = itemName();
-                    setProductos(respuesta.filter( productos => productos.name.toLowerCase().includes(name)));
-                    setLoading(false);
-                } else if (categoryId) {
-                    setProductos(respuesta.filter( productos => productos.category === categoryId ));
-                    setLoading(false);
-                } else {
-                    setProductos(respuesta);
-                    setLoading(false);
-                }
+    
+
+    const getProductos = () => {
+        const db = getFirestore ();
+        const querySnapShot = collection (db , 'items'); 
+        
+        if (category){
+            
+            const newConf = query (querySnapShot, where ("category", "==", category));
+            getDocs (newConf)
+            .then ((response) => {
+                const data = response.docs.map ((doc) => {
+                    return { id: doc.id, ...doc.data()};
+                });
+             console.log (data)
+             setLoading(false);
+             setProductos (data)   
             })
-            .catch( (error) => {
-                console.log(error);
-            });
-    }, [ itemName, categoryId]);
+            .catch ((error)=> console.log(error));
+        } else {
+            getDocs (querySnapShot)
+            .then ((response) => {
+                const data = response.docs.map ((doc) => {
+                    return { id: doc.id, ...doc.data()};
+                });
+           
+             setLoading(false);
+             setProductos (data)   
+            })
+            .catch ((error)=> console.log(error));
+        }}
+       
+    
+   useEffect( () => {
+        getProductos ();
+      }, [category]);
 
-    return (
-        <div>
-            {
-              loading  ? <PagCargando />: productos.length === 0 ? "No hay Stock" : <ItemList productos={productos} />
+    return  <div>
+            {loading  ? <PagCargando />:<ItemList productos={productos} />
             }
         </div>
-    );
-}
+    ;
+};
 
 export default ItemListContainer;

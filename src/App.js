@@ -8,16 +8,18 @@ import Platos from './pages/Platos/Platos';
 import Tazas from './pages/Tazas/Tazas';
 import Detail from './pages/Detail/Detail';
 import Error from './pages/Error/Error';
-
+import Cart from './pages/Cart/Cart';
 import NavBar from './Components/Navbar/NavBar';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
+
+import CartProvider from './Context/cartProvider';
 
 function App() {
   return (
     <BrowserRouter>
       <NavBar/>
-      
+      <CartProvider>
       <Routes>
           <Route path = '*' element = { <Error/> } />
           <Route path = '/' element = {<Home/>} />
@@ -27,10 +29,11 @@ function App() {
           <Route path = 'Colecciones' element = {<Colecciones/>} />
           <Route path = 'Platos' element = {<Platos/>} />
           <Route path = 'Tazas' element = {<Tazas/>} />
-          <Route path="/item/:itemId" element={ <ItemDetailContainer /> } />
-          <Route path="/category/:categoryId" element={ <ItemListContainer /> } />
+          <Route path="/item/:id" element={ <ItemDetailContainer /> } />
+          <Route path="/category/:category" element={ <ItemListContainer /> } />
+          <Route path = 'Cart' element = {<Cart/>} />
       </Routes> 
-    
+      </CartProvider>
     </BrowserRouter>
   );
 }
