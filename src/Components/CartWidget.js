@@ -1,18 +1,20 @@
-import { useContext, useEffect, useState } from "react"
+import { useState } from "react";
+import { useContext, useEffect} from "react"
 import { cartContext } from "../Context/cartContext"
 
-const CartWidget = () => {
+export const CartWidget = () => {
   const {cart} = useContext(cartContext);
   const [total, setTotal] = useState (0);
-
- useEffect (() => {
+  
+  useEffect (() => {
     setTotal (
       cart?.reduce ((prev, curr)=> {
         console.log (prev, curr)
-        return prev + curr.quantity;  
+        return prev+ curr.quantity;  
       }, 0))
   }, [cart] )
-  
+
+    
   return (
     
     <div>

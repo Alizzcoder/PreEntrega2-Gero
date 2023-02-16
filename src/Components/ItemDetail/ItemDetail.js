@@ -8,12 +8,11 @@ import './ItemDetail.css';
 
 const ItemDetail =( { product } )=>  {
     const {addItem} = useContext (cartContext);
+    const [contador, setContador] = useState (1);
     const navigate = useNavigate();
     const atras = () => {navigate(-1);}
-    const [contador, setContador] = useState (1);
    
     
-
     return (
         <div className="ficha">
           <article className="datosficha">
@@ -25,13 +24,13 @@ const ItemDetail =( { product } )=>  {
                     <p>Unidades disponibles: {product.stock}</p>
                     <ItemCount
                         contador= {contador}
-                        actualizarValor={setContador}
+                        setContador={setContador}
                         stock={product.stock}
                         
                     />
                     <div>
                         <button className= "compra" onClick={() => addItem(product, contador) }> 
-                        Agregar al carrito{''}
+                        Agregar al carrito
                         </button>
                      </div>
                         <button className="volver" onClick={atras}>Volver</button>

@@ -1,0 +1,39 @@
+.tablaCart {
+    padding-left: 20px;
+}
+
+.tablaCart  table{
+    width: 90%;
+    margin-top: 15px;
+    
+} 
+
+img {
+    border-radius: 2%;
+}
+th,td {
+    text-align: center;
+    padding: 10px;
+}
+
+.btn{
+    background: none;
+    border: 1px #010101 solid;
+    border-radius: 5px;
+    color: rgb(23, 105, 102);
+    font-weight: bold;
+    width: 180px;
+    height: 45px;
+    margin-top: 20px;
+}
+.btn:hover {
+color: #f7f4f6;
+background-color: #010101
+};
+
+.espacio{
+    display: flex;
+    justify-content: center;
+    padding-left: 90px;
+    padding-top: 15px;
+}

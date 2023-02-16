@@ -17,9 +17,10 @@ import CartProvider from './Context/cartProvider';
 
 function App() {
   return (
+    <CartProvider>
     <BrowserRouter>
+     
       <NavBar/>
-      <CartProvider>
       <Routes>
           <Route path = '*' element = { <Error/> } />
           <Route path = '/' element = {<Home/>} />
@@ -33,8 +34,9 @@ function App() {
           <Route path="/category/:category" element={ <ItemListContainer /> } />
           <Route path = 'Cart' element = {<Cart/>} />
       </Routes> 
-      </CartProvider>
+      
     </BrowserRouter>
+    </CartProvider>
   );
 }
 

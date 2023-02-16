@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+//import { useState, useEffect } from "react";
 import './estilo.css';
 
 
 
-const ItemCount = ({contador, actualizarValor, stock}) => {
+const ItemCount = ({contador, setContador, stock}) => {
   //const [contador, setContador] = useState (1)
   
   
@@ -12,14 +12,14 @@ const ItemCount = ({contador, actualizarValor, stock}) => {
       alert ("Llegaste al número máximo de unidades disponbiles")
         return;
             }
-        actualizarValor (contador+1);
+        setContador (contador+1);
     };
 
    const restar= () => {
-     if (contador <=0){
+     if (contador <=1){
         return;
         }
-        actualizarValor (contador-1)
+        setContador (contador-1)
     };
   
    return (
