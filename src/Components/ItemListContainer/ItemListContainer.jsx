@@ -18,7 +18,7 @@ const ItemListContainer =()=> {
         const db = getFirestore ();
         const querySnapShot = collection (db , 'items'); 
         
-        setTimeout(()=>{
+      
         if (category){
             
             const newConf = query (querySnapShot, where ("category", "==", category));
@@ -43,12 +43,12 @@ const ItemListContainer =()=> {
              setProductos (data)   
             })
             .catch ((error)=> console.log(error));
-        }},1000);}
+        }}
        
     
    useEffect( () => {
         getProductos ();
-      }, [category]);
+      }, );
 
     return  <div>
             {loading  ? <PagCargando />:<ItemList productos={productos} />
