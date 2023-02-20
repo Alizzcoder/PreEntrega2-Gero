@@ -1,9 +1,9 @@
 import { Audio } from  'react-loader-spinner'
-import './PagCargando';
+
 
 function PagCargando() {
     return (
-        <div className="cargando">
+        <div >
            <Audio
                 height = "80"
                 width = "80"

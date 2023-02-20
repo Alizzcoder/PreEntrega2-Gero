@@ -38,8 +38,13 @@ const clear = () => {
     setCart ([]);
 };
 
+
+const sumaTotal = () => {
+    return cart.reduce((acc, curr) => acc + curr.quantity * curr.price, 0);
+  }
+
 return (
- <cartContext.Provider value={{cart, addItem, clear, removeId}}>
+ <cartContext.Provider value={{cart, addItem, clear, removeId, sumaTotal}}>
     { /*app.js*/}
     {children}
     </cartContext.Provider>

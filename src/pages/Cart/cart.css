@@ -31,9 +31,9 @@ color: #f7f4f6;
 background-color: #010101
 };
 
-.espacio{
+.form  {
+    
     display: flex;
+    align-items: center;
     justify-content: center;
-    padding-left: 90px;
-    padding-top: 15px;
 }

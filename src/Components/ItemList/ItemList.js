@@ -7,7 +7,7 @@ const ItemList = ({productos }) => {
         <div className="item-list">
             <div className="container-fluid">
             {productos.map ((product) => (
-              < Link Key ={product.id} to= {`/item/${product.id}`} >
+              < Link key ={product.id} to= {`/item/${product.id}`} >
                  < Item product = {product} /> 
               </ Link>
       
